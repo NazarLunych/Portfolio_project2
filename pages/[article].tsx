@@ -1,12 +1,16 @@
 import Layout from '../components/Layout';
+import {useRouter} from 'next/router';
 import clsx from 'clsx';
 import styles from './index.module.scss';
 
-export default function Home(): JSX.Element {
+export default function Article(): JSX.Element {
+  const router = useRouter();
+  const {article} = router.query;
+
   return (
     <Layout>
       <div className={clsx('container', styles.cntWrapper)}>
-        <h1>Welcome!</h1>
+        {article && <h1>{article} page</h1>}
       </div>
     </Layout>
   );

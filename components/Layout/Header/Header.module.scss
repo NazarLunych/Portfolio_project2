@@ -1,0 +1,112 @@
+@import '../../../styles/core/index.scss';
+
+$headerHeight: 110px;
+$mobileHeaderHeight: 81px;
+
+.header {
+  height: $headerHeight;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  background-color: #fbfbfb;
+  z-index: 11;
+  align-items: center;
+  @include media('<xl') {
+    justify-content: space-between;
+  }
+
+  @include media('<sm') {
+    height: $mobileHeaderHeight;
+    filter: drop-shadow(0px -2px 4px rgba(0, 0, 0, 0.1));
+  }
+}
+
+.activeMenuHeader {
+  background-color: #000;
+
+  .logo {
+    color: #fff;
+  }
+}
+
+.menuItem {
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.subMenuBtnWrapper {
+  position: relative;
+  display: flex;
+}
+
+.arrowIcon {
+  margin-left: 10px;
+  transition: 0.5s;
+}
+
+.arrowIconTop {
+  transform: rotate(180deg);
+}
+
+.subMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  border-radius: 10px;
+  padding: 10px 0;
+
+  button {
+    color: #fff;
+  }
+}
+
+.headerMenuWrapper {
+  display: flex;
+  margin-left: auto;
+}
+
+.nav {
+  @extend .headerMenuWrapper;
+}
+
+.iconBtn {
+  margin-left: 37px;
+}
+
+.asideMenu {
+  position: absolute;
+  top: $mobileHeaderHeight;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 11;
+  background-color: #000;
+  padding-bottom: 25px;
+}
+
+.asideMenuList {
+  margin-top: 26px;
+  margin-left: 3px;
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobMenuItem {
+  font-size: 14px;
+  color: #fff;
+}
+
+.mobAccountBtns {
+  margin-top: 57px;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}

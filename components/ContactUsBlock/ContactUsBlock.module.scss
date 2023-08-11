@@ -1,0 +1,289 @@
+@import '../../styles/core/index.scss';
+
+$color-gray: #8d8d8d;
+
+.contactUsWrapper {
+  padding: 10px;
+  margin: 0 23px;
+  border-radius: 10px;
+  display: flex;
+  gap: 50px;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  @include media('<xl') {
+    gap: 31px;
+    flex-direction: column;
+  }
+
+  @include media('<lg') {
+    margin: 20px 0 0;
+    padding: 5px;
+  }
+}
+
+.infoBlock {
+  max-width: 410px;
+  width: 100%;
+  text-align: start;
+  padding: 40px 40px 30px;
+  border-radius: 10px;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  @include media('<xl') {
+    max-width: 100%;
+    width: auto;
+  }
+
+  @include media('<sm') {
+    text-align: center;
+    padding: 15px 15px 18px;
+    border-radius: 5px;
+  }
+
+  * {
+    color: #fff;
+  }
+
+  .link {
+    display: flex;
+    gap: 25px;
+    @include media('<sm') {
+      font-size: 12px;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  .infoText {
+    color: #c9c9c9;
+    font-size: 18px;
+    margin: 6px 0;
+    @include media('<sm') {
+      font-size: 11px;
+    }
+  }
+
+  .image {
+    object-fit: contain;
+    width: 300px;
+    position: absolute;
+    bottom: -225px;
+    right: -92px;
+    @include media('<sm') {
+      width: 193px;
+      bottom: -191px;
+      right: -112px;
+    }
+  }
+}
+
+.topLayerInfo {
+  height: 100%;
+  position: inherit;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.socialWrapper {
+  display: flex;
+  gap: 23px;
+  @include media('<sm') {
+    justify-content: center;
+  }
+}
+
+.socialIcon {
+  &:hover {
+    path {
+      fill: #000;
+    }
+
+    circle {
+      fill: #fff;
+    }
+  }
+}
+
+.contactInfoWrapper {
+  margin: 110px 0 159px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  @include media('<sm') {
+    margin: 13px 0 58px;
+    gap: 16px;
+  }
+}
+
+.formWrapper {
+  flex: 1;
+  text-align: start;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  @include media('<xl') {
+    padding: 0 16px 16px;
+  }
+
+  @include media('<sm') {
+    padding-bottom: 57px;
+  }
+}
+
+.inputsWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 46px 39px;
+  margin-bottom: 46px;
+  @include media('<sm') {
+    row-gap: 21px;
+    margin-bottom: 24px;
+    grid-template-columns: 1fr;
+  }
+}
+
+.inputCnt {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+
+  & > label {
+    color: $color-gray;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  & > input {
+    padding: 9px 0;
+    border: none;
+    border-bottom: 1px solid $color-gray;
+
+    &:valid {
+      border-bottom-color: #000;
+    }
+  }
+}
+
+.selectTitle {
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 20px;
+  @include media('<sm') {
+    margin-bottom: 12px;
+  }
+}
+
+.radioGroup {
+  display: flex;
+  gap: 20px;
+  @include media('<sm') {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 0;
+  }
+
+  input[type='radio'] {
+    display: none;
+
+    &:checked + label::before {
+      background-color: #000;
+      background-image: url('../../assets/icons/check-solid.svg');
+      background-size: 7px auto;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  label {
+    position: relative;
+    padding-left: 24px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background-color: #e0e0e0;
+    }
+  }
+}
+
+.radio {
+  font-size: 12px;
+}
+
+.textareaInput {
+  margin-top: 46px;
+  display: flex;
+  flex-direction: column;
+  @include media('<sm') {
+    margin-top: 28px;
+  }
+
+  & > textarea {
+    border: none;
+    border-bottom: 1px solid $color-gray;
+    resize: none;
+
+    &::placeholder {
+      color: $color-gray;
+      font-family: 'Poppins', sans-serif;
+    }
+  }
+}
+
+.button {
+  margin-top: 45px;
+  width: fit-content;
+  padding: 15px 48px;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+  align-self: end;
+  transition: 0.5s;
+  @include media('<sm') {
+    border-radius: 3.2px;
+    margin-top: 24px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+    outline: 1px solid $color-gray;
+  }
+}
+
+.letterSendImg {
+  object-fit: contain;
+  position: absolute;
+  right: -5px;
+  bottom: -36px;
+  height: 211px;
+  @include media('<sm') {
+    right: -58px;
+    bottom: -29px;
+    height: 109px;
+  }
+}
+
+.textareaName {
+  color: $color-gray;
+  font-size: 12px;
+  line-height: 20px;
+}
