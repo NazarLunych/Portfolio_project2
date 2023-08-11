@@ -9,14 +9,28 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.2.0",
     "@types/node": "20.4.8",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
+    "@types/validator": "^13.11.1",
+    "@use-it/event-listener": "^0.1.7",
+    "clsx": "^2.0.0",
+    "debounce": "^1.2.1",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.13",
+    "include-media": "^2.0.0",
     "next": "13.4.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.1.6"
+    "react-hook-form": "^7.45.4",
+    "remove": "^0.1.5",
+    "sass": "^1.64.2",
+    "typescript": "5.1.6",
+    "validator": "^13.11.0",
+    "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/debounce": "^1.2.1"
   }
 }

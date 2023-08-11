@@ -1,0 +1,93 @@
+@import './core/index.scss';
+
+html,
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #fbfbfb;
+  white-space: break-spaces;
+}
+
+* {
+  text-decoration: none;
+  color: #000;
+}
+
+span {
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 40px;
+  @include media('<sm') {
+    font-size: 24px;
+  }
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 28px;
+  @include media('<sm') {
+    font-size: 20px;
+  }
+}
+
+h4 {
+  font-size: 24px;
+  @include media('<sm') {
+    font-size: 18px;
+  }
+}
+
+h5 {
+  font-size: 18px;
+  @include media('<sm') {
+    font-size: 16px;
+  }
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  @include media('<sm') {
+    font-size: 13px;
+  }
+}
+
+.container,
+.containerFooter {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.container {
+  padding: 0 100px;
+  @include media('<md') {
+    padding: 0 20px;
+  }
+}
+
+.containerFooter {
+  padding: 0 80px;
+  @include media('<md') {
+    padding: 0 20px;
+  }
+}
